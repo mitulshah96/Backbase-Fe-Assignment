@@ -1,0 +1,42 @@
+export const transactionData = [
+  {
+    date: new Date(2021, 5, 20),
+    beneficiary: 'H&M Online Store',
+    mode: 'Online Transfer',
+    amount: 19.72,
+    credit: false,
+    currencyCode: 'EUR',
+  },
+  {
+    date: new Date(2021, 5, 19),
+    beneficiary: 'Backbase',
+    mode: 'Online Transfer',
+    amount: 19.72,
+    credit: true,
+    currencyCode: 'EUR',
+  },
+  {
+    date: new Date(2021, 5, 18),
+    beneficiary: 'Texaco',
+    mode: 'Card Payment',
+    amount: 19.72,
+    credit: false,
+    currencyCode: 'EUR',
+  },
+  {
+    date: new Date(2021, 5, 17),
+    beneficiary: 'Amazon Online Store',
+    mode: 'Online Transfer',
+    amount: 19.72,
+    credit: false,
+    currencyCode: 'EUR',
+  },
+  {
+    date: new Date(2021, 5, 16),
+    beneficiary: 'Starbucks',
+    mode: 'Card Payment',
+    amount: 19.72,
+    credit: false,
+    currencyCode: 'EUR',
+  },
+];

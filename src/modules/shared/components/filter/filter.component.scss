@@ -1,0 +1,25 @@
+.filter-form {
+  padding: 15px;
+  .input-group {
+    display: flex;
+    align-items: center;
+  }
+  .input-group-prepend {
+    height: 30px;
+    border: 1px solid #777;
+    border-radius: 4px 0 0 4px;
+    border-right: 0;
+    padding: 1px 10px;
+    background: #ddd;
+    display: inline-flex;
+    align-items: center;
+  }
+  input {
+    height: 30px;
+    border: 1px solid #777;
+    border-radius: 0 4px 4px 0;
+    font-style: italic;
+    padding-left: 5px;
+    padding-right: 10px;
+  }
+}

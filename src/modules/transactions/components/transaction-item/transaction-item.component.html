@@ -1,0 +1,18 @@
+<div class="left-data">
+  <p>{{ transaction.date | date: "MMM dd" }}</p>
+  <p class="transaction-title">
+    {{ transaction.beneficiary }}<br /><span>{{ transaction.mode }}</span>
+  </p>
+</div>
+<ng-container>
+  <div class="credit" *ngIf="transaction.credit">
+    {{ transaction.amount | currency: transaction.currencyCode }}
+  </div>
+  <div class="non-credit" *ngIf="!transaction.credit">
+    {{
+    -transaction.amount
+    | currency: transaction.currencyCode
+    | currencyTransform
+    }}
+  </div>
+</ng-container>

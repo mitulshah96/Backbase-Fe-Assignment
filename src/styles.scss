@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+@import "variable.scss";
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  font-size: $font-medium;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+.btn {
+  border: 1px solid #212121;
+  padding: 8px 12px;
+  border-radius: 4px;
+  &.sec-btn {
+    margin-right: 10px;
+  }
+  &.prm-btn {
+    border-color: $primary-red;
+    background-color: $primary-red;
+    color: #fff;
+  }
+}

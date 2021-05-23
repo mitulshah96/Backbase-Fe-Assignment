@@ -1,0 +1,11 @@
+<div class="transaction-details transaction-list">
+  <card-header title="Transaction List" icon="fa fa-list"></card-header>
+  <app-filter (inputChange)="onTransactionFilter($event)"></app-filter>
+  <div class="trans-data" *ngIf="(transactions | itemFilter: searchText).length > 0; else noData">
+    <transaction-item class="trans-section" [transaction]="transaction"
+      *ngFor="let transaction of transactions | itemFilter: searchText"></transaction-item>
+  </div>
+  <ng-template #noData>
+    <div class="no-data">No Data To Display</div>
+  </ng-template>
+</div>

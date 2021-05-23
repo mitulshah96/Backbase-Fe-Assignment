@@ -1,0 +1,48 @@
+@import "../../../../variable.scss";
+
+.transaction-details {
+  border-radius: 10px;
+  background: #fff;
+  width: 80%;
+  .trans-data {
+    padding: 15px;
+    height: 300px;
+    overflow-y: auto;
+    .trans-section {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 20px;
+      position: relative;
+      padding-left: 20px;
+      &:before {
+        position: absolute;
+        left: 0;
+        top: -10px;
+        height: 100%;
+        width: 4px;
+        background: $primary-red;
+        content: "";
+      }
+      &:nth-child(2n):before {
+        background: $green;
+      }
+      &:nth-child(3n):before {
+        background: $pink;
+      }
+      p {
+        margin: 0 30px 0 0;
+        font-weight: bold;
+        span {
+          font-weight: normal;
+        }
+      }
+    }
+  }
+  .no-data {
+    text-align: center;
+    font-weight: bold;
+    padding: 14px;
+  }
+}

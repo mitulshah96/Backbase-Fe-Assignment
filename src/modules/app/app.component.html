@@ -1,0 +1,10 @@
+<app-header></app-header>
+<main class="main-area">
+  <div class="box1">
+    <fund-transfer (onTransfer)="onFundReceive($event)"></fund-transfer>
+  </div>
+  <div class="box2">
+    <transaction-list [transactions]="transactions"></transaction-list>
+  </div>
+</main>
+<app-footer></app-footer>

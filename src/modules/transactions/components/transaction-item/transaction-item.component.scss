@@ -1,0 +1,19 @@
+@import "../../../../variable.scss";
+
+.left-data {
+  display: flex;
+  align-items: center;
+}
+.credit {
+  color: $green;
+  font-weight: bold;
+}
+.non-credit {
+  color: $primary-red;
+  font-weight: bold;
+}
+
+.transaction-title {
+  margin-right: 14px;
+  margin-left: 14px;
+}

@@ -1,0 +1,62 @@
+<div class="transaction-details transaction-form">
+  <card-header title="Make Transfer"></card-header>
+  <div class="trans-form-body">
+    <form [formGroup]="fundTransferForm" (ngSubmit)="onSubmit(fundTransferForm)">
+      <div class="formField">
+        <label>From Account</label>
+        <input type="text" placeholder="{{ account.name }}: {{
+            account.balance | currency: account.currencyCode
+          }}" disabled />
+      </div>
+      <div class="formField">
+        <label for="beneficiary" class="control-label required">To Account</label>
+        <input type="text" id="beneficiary" class="form-control" placeholder="Type your account name"
+          formControlName="beneficiary" />
+        <div *ngIf="f.beneficiary.touched && f.beneficiary.invalid">
+          <div *ngIf="f.beneficiary.errors && f.beneficiary.errors.required" class="alert">
+            Beneficiary name is required.
+          </div>
+        </div>
+      </div>
+      <div class="formField">
+        <label for="amount" class="control-label required">Amount</label>
+        <div class="input-container">
+          <img src="../../assets/rupee.svg" width="12px" height="12px" />
+          <input class="input-field" id="amount" type="number" placeholder="Enter your currency here"
+            formControlName="amount" required numberOnly />
+        </div>
+        <div *ngIf="f.amount.touched && f.amount.invalid">
+          <div *ngIf="f.amount.errors && f.amount.errors.required" class="alert">
+            Amount is required.
+          </div>
+          <div *ngIf="f.amount.errors && f.amount.errors.balanceValidator" class="alert">
+            There is not enough balance
+          </div>
+        </div>
+      </div>
+      <div class="btn-submit">
+        <button class="trans-submit1 btn prm-btn" type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="modal" [ngClass]="!isModalVisible ? 'hide-modal' : ''">
+  <div class="modal-data">
+    <div class="modal-header">
+      <h2><span>Review </span> Transfer</h2>
+      <a class="cross-icon" (click)="onModalClose()"><i class="fa fa-times" aria-hidden="true"></i></a>
+    </div>
+    <div class="modal-body">
+      <p><em>Are u ready to send out this transfer?</em></p>
+      <h3>It will be sent to account:</h3>
+      <p>{{ f.beneficiary.value }}</p>
+      <h3>With amount of:</h3>
+
+      <p>{{ f.amount.value | currency:f.currencyCode.value}}</p>
+    </div>
+    <div class="modal-footer">
+      <a class="btn sec-btn" (click)="onModalClose()">Close</a><a (click)="onTransferFund()" class="btn prm-btn">Send
+        Transfer</a>
+    </div>
+  </div>
+</div>

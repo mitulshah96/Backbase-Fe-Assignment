@@ -1,0 +1,158 @@
+@import "../../../variable.scss";
+
+.control-label.required:after {
+  color: #d00;
+  content: "*";
+  position: absolute;
+  margin-left: 5px;
+  top: 7px;
+}
+
+.transaction-form {
+  background-color: #fff;
+  margin-left: 10%;
+  margin-right: 10%;
+  .header {
+    background-color: $primary-blue;
+    padding: 15px;
+    border-radius: 10px 10px 0 0;
+    color: #fff;
+  }
+
+  .trans-form-body {
+    form {
+      display: flex;
+      flex-direction: column;
+      padding: 15px;
+
+      label {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 7px;
+        color: #454545;
+      }
+      .formField {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 15px;
+      }
+      input.form-control,
+      input[type="text"] {
+        padding: 4px;
+        border-radius: 2px;
+        border: 1px solid #d2d0d0;
+        font-size: 10px;
+        color: #454545;
+        height: 34px;
+        font-size: 14px;
+        padding: 0 10px;
+        border-color: #777;
+        outline: none;
+        &.ng-touched {
+          border-color: red;
+        }
+      }
+      .alert {
+        color: red;
+        margin-top: 5px;
+        font-size: 14px;
+      }
+      input.form-control {
+        font-style: italic;
+      }
+      input[type="text"]:disabled {
+        background: #d2d0d0;
+        border-color: #d2d0d0;
+      }
+
+      .input-container {
+        display: flex;
+        width: 100%;
+        // margin-bottom: 15px;
+
+        img {
+          display: inline-flex;
+          align-items: center;
+          height: 34px;
+          border: 1px solid #777;
+          border-right: 0;
+          padding: 0 6px;
+          background: #d2d0d0;
+          border-radius: 4px 0 0 4px;
+          width: 26px;
+          border-radius: 4px 0 0 4px;
+        }
+      }
+
+      .input-field {
+        width: 100%;
+        border-radius: 0 4px 4px 0;
+        outline: none;
+        border: 1px solid #7777;
+        padding: 4px;
+        font-style: italic;
+      }
+
+      .italic-style {
+        font-style: italic;
+      }
+      .btn-submit {
+        display: flex;
+        justify-content: flex-end;
+        .btn {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+// modal{
+.modal {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  z-index: 1;
+  &.hide-modal {
+    display: none;
+  }
+  .modal-data {
+    background: #fff;
+    width: 500px;
+    border-radius: 4px;
+    margin: auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .modal-header {
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+    h2 {
+      font-weight: normal;
+      font-size: 22px;
+      margin: 0;
+      span {
+        font-weight: bold;
+      }
+    }
+    .cross-icon {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      cursor: pointer;
+    }
+  }
+  .modal-body {
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+  }
+  .modal-footer {
+    padding: 20px;
+    display: flex;
+    justify-content: flex-end;
+  }
+}

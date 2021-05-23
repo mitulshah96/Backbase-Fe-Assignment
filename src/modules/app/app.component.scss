@@ -1,0 +1,18 @@
+@import "../../variable.scss";
+
+.main-area {
+  display: flex;
+  background-image: url("../../assets/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: calc(100vh - 100px);
+  padding: 16px;
+}
+
+.box1 {
+  flex: 1;
+}
+
+.box2 {
+  flex: 2;
+}
